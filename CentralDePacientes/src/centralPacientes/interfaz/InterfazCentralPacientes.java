@@ -273,7 +273,7 @@ public class InterfazCentralPacientes extends JFrame {
      */
     public void reqFuncOpcion2() {
         int resultado = central.cantMujeres();
-        JOptionPane.showMessageDialog(this, resultado, "Respuesta", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(this,"La cantidad de mujeres en la lista es: " + resultado, "Respuesta", JOptionPane.INFORMATION_MESSAGE);
     }
 
     /**

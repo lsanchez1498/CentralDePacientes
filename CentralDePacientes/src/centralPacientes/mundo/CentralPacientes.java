@@ -11,6 +11,8 @@
  */
 package centralPacientes.mundo;
 
+import centralPacientes.interfaz.PanelListaPacientes;
+
 import java.util.ArrayList;
 
 /**
@@ -70,6 +72,7 @@ public class CentralPacientes {
      *            pac!=null y no existe un paciente con código igual a pac.codigo
      */
     public void agregarPacienteAlComienzo(Paciente pac) {
+        pacientes.add(0, pac);
         // TODO: Realiar el método que agrega al principio
     }
 
@@ -80,6 +83,7 @@ public class CentralPacientes {
      *            pac!=null y no existe un paciente con código igual a pac.codigo
      */
     public void agregarPacienteAlFinal(Paciente pac) {
+        pacientes.add(pac);
         // TODO: Agragar un paciente al final de la lista
     }
 
@@ -141,17 +145,28 @@ public class CentralPacientes {
      * Retorna la cantidad de hombres que hay en la lista
      */
     public int cantHombres() {
-        // TODO: Completar
-        return 0;
+        int Hombres = 0;
+        for(Paciente paciente : pacientes){
+            if(paciente.darSexo() == 1){
+                Hombres++;
+            }
+        }
+        return Hombres;
     }
 
     /**
      * Retorna la cantidad de mujeres que hay en la lista
      */
     public int cantMujeres() {
-        // TODO: Completar
-        return 0;
+        int Mujeres = 0;
+        for(Paciente paciente : pacientes){
+            if(paciente.darSexo() == 2){
+                Mujeres++;
+            }
+        }
+        return Mujeres;
     }
+
 
     /**
      * De las 6 opciones de clínicas que tiene la central
