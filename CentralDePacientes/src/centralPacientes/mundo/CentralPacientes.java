@@ -105,7 +105,11 @@ public class CentralPacientes {
      * Busca el paciente con el código dado en la lista de pacientes.
      */
     public Paciente localizar(int codigo) {
-        // TODO: Completar el método
+        for(Paciente paciente : pacientes){
+            if(paciente.darCodigo() == codigo){
+                return paciente;
+            }
+        }
         return null;
     }
 
