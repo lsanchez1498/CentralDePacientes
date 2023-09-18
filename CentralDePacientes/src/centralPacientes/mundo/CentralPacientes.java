@@ -217,6 +217,34 @@ public class CentralPacientes {
      *
      * @return nombre de la cl�nica
      */
+    public String metodo4() {
+    // Nata
+        String clinicaMasOcupada = null;
+        int maxPacientes = -1;
+
+        for (String clinica : listaClinicas) {
+            int pacientesEnClinica = contarPacientesEnClinica(clinica);
+            if (pacientesEnClinica > maxPacientes) {
+                maxPacientes = pacientesEnClinica;
+                clinicaMasOcupada = clinica;
+            }
+        }
+
+        return clinicaMasOcupada;
+    }
+
+    private int contarPacientesEnClinica(String nombreClinica) {
+    int contador = 0;
+    for (Paciente pac : pacientes) {
+        if (pac.darClinica().equals(nombreClinica)) {
+            contador++;
+        }
+    }
+    return contador;
+}
+
+
+
 
 }
 
