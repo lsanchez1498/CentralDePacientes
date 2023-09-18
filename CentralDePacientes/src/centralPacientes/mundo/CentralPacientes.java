@@ -217,20 +217,7 @@ public class CentralPacientes {
      *
      * @return nombre de la cl�nica
      */
-    public String metodo4() {
-        String clinicaMasOcupada = null;
-        int maxPacientes = -1;
 
-        for (String clinica : listaClinicas) {
-            int pacientesEnClinica = contarPacientesEnClinica(clinica);
-            if (pacientesEnClinica > maxPacientes) {
-                maxPacientes = pacientesEnClinica;
-                clinicaMasOcupada = clinica;
-            }
-        }
-
-        return clinicaMasOcupada;
-    }
 }
 
 
