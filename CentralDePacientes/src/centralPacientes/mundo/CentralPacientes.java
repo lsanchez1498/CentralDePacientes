@@ -141,7 +141,22 @@ public class CentralPacientes {
      * Elimina el paciente con el c�digo especificado.
      */
     public void eliminarPaciente(int cod) throws NoExisteException {
-        // TODO: Si no existe el paciente con el c�digo dado, genera la excepci�n
+
+        // Nata
+
+        int indiceEliminar = -1;
+        for (int i = 0; i < pacientes.size(); i++) {
+            Paciente pActual = pacientes.get(i);
+            if (pActual.darCodigo() == cod) {
+                indiceEliminar = i;
+                break;
+            }
+        }
+        if (indiceEliminar != -1) {
+            pacientes.remove(indiceEliminar);
+        } else {
+            throw new NoExisteException(cod); // Genera la excepción si no se encuentra el paciente.
+        }
     }
 
     /**
@@ -203,9 +218,19 @@ public class CentralPacientes {
      * @return nombre de la cl�nica
      */
     public String metodo4() {
-        // TODO: Completar
-        return "Respuesta 4";
+        String clinicaMasOcupada = null;
+        int maxPacientes = -1;
+
+        for (String clinica : listaClinicas) {
+            int pacientesEnClinica = contarPacientesEnClinica(clinica);
+            if (pacientesEnClinica > maxPacientes) {
+                maxPacientes = pacientesEnClinica;
+                clinicaMasOcupada = clinica;
+            }
+        }
+
+        return clinicaMasOcupada;
     }
-
-
 }
+
+
