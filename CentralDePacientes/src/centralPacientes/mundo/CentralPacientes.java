@@ -220,17 +220,19 @@ public class CentralPacientes {
     public String metodo4() {
     // Nata
         String clinicaMasOcupada = null;
-        int maxPacientes = -1;
+
+        int maxPacientes = 0;
 
         for (String clinica : listaClinicas) {
             int pacientesEnClinica = contarPacientesEnClinica(clinica);
+
             if (pacientesEnClinica > maxPacientes) {
                 maxPacientes = pacientesEnClinica;
                 clinicaMasOcupada = clinica;
             }
         }
 
-        return clinicaMasOcupada;
+        return "La clinica mas ocupada es la " + clinicaMasOcupada;
     }
 
     private int contarPacientesEnClinica(String nombreClinica) {
